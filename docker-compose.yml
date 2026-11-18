@@ -1,0 +1,47 @@
+services:
+  web:
+    build: .
+    container_name: wikipan-web
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    environment:
+      APP_ENV: dev
+      DB_HOST: mysql
+      DB_PORT: "3306"
+      DB_NAME: wikipan
+      DB_USER: wikipan
+      DB_PASS: wikipan123
+    volumes:
+      - .:/var/www/html
+    depends_on:
+      mysql:
+        condition: service_healthy
+
+  mysql:
+    image: mysql:8.0
+    container_name: wikipan-mysql
+    restart: unless-stopped
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_0900_ai_ci
+    environment:
+      MYSQL_ROOT_PASSWORD: root123456
+      MYSQL_DATABASE: wikipan
+      MYSQL_USER: wikipan
+      MYSQL_PASSWORD: wikipan123
+      TZ: Asia/Shanghai
+    ports:
+      - "3307:3306"
+    volumes:
+      - ./db/schema.sql:/docker-entrypoint-initdb.d/01-schema.sql:ro
+      - ./db/seed.sql:/docker-entrypoint-initdb.d/02-seed.sql:ro
+      - wikipan-mysql:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1", "-uroot", "-proot123456"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+
+volumes:
+  wikipan-mysql:

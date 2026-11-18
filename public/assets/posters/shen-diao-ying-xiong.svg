@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000">
+<defs>
+  <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#071a18"/>
+    <stop offset="0.55" stop-color="#0d3a33"/>
+    <stop offset="1" stop-color="#071a18"/>
+  </linearGradient>
+  <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+    <stop offset="0" stop-color="#f0b03c" stop-opacity="0.95"/>
+    <stop offset="0.4" stop-color="#f0b03c" stop-opacity="0.35"/>
+    <stop offset="1" stop-color="#f0b03c" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="vig" cx="48%" cy="42%" r="78%">
+    <stop offset="0.45" stop-color="#000" stop-opacity="0"/>
+    <stop offset="1" stop-color="#000" stop-opacity="0.72"/>
+  </radialGradient>
+  <filter id="grain">
+    <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/>
+    <feColorMatrix type="saturate" values="0"/>
+    <feComponentTransfer><feFuncA type="linear" slope="0.10"/></feComponentTransfer>
+  </filter>
+  <filter id="soft"><feGaussianBlur stdDeviation="46"/></filter>
+  <filter id="soft2"><feGaussianBlur stdDeviation="16"/></filter>
+</defs>
+<rect width="1600" height="1000" fill="url(#sky)"/>
+<circle cx="1120" cy="330" r="230" fill="url(#glow)"/><circle cx="1120" cy="330" r="120" fill="#f0b03c" opacity="0.5"/><path d="M -60 1040 L -215 731 L -60 482 L 78 692 L 129 731 L 284 434 L 422 692 L 473 731 L 628 402 L 766 692 L 817 731 L 972 386 L 1110 692 L 1161 731 L 1316 452 L 1454 692 L 1505 731 L 1660 487 L 1798 692 L 1660 1040 Z" fill="#0a2420" opacity="0.95"/><ellipse cx="466" cy="635" rx="426" ry="30" fill="#ffffff" opacity="0.07" filter="url(#soft2)"/><ellipse cx="1260" cy="672" rx="337" ry="35" fill="#ffffff" opacity="0.07" filter="url(#soft2)"/><ellipse cx="1186" cy="647" rx="407" ry="52" fill="#ffffff" opacity="0.07" filter="url(#soft2)"/><ellipse cx="323" cy="624" rx="513" ry="60" fill="#ffffff" opacity="0.07" filter="url(#soft2)"/><path d="M -60 1040 L -254 837 L -60 587 L 112 804 L 176 837 L 370 605 L 542 804 L 606 837 L 800 584 L 972 804 L 1036 837 L 1230 661 L 1402 804 L 1466 837 L 1660 643 L 1832 804 L 1660 1040 Z" fill="#071a17" opacity="0.98"/><ellipse cx="802" cy="766" rx="359" ry="31" fill="#a9e6da" opacity="0.06" filter="url(#soft2)"/><ellipse cx="1339" cy="782" rx="591" ry="27" fill="#a9e6da" opacity="0.06" filter="url(#soft2)"/><ellipse cx="229" cy="782" rx="433" ry="43" fill="#a9e6da" opacity="0.06" filter="url(#soft2)"/><path d="M -60 1040 L -318 956 L -60 789 L 169 932 L 255 956 L 513 749 L 743 932 L 829 956 L 1087 823 L 1316 932 L 1402 956 L 1660 747 L 1889 932 L 1660 1040 Z" fill="#04100e" opacity="1"/><path d="M 300 240 q 22 -18 44 0 q 22 -18 44 0" stroke="#0a1a17" stroke-width="7" fill="none" opacity="0.55"/><path d="M 420 180 q 16 -13 32 0 q 16 -13 32 0" stroke="#0a1a17" stroke-width="5" fill="none" opacity="0.45"/><path d="M -200 900 L 1100 -100 L 1420 -100 L 120 1000 Z" fill="#ffffff" opacity="0.025"/><rect width="1600" height="1000" filter="url(#grain)" opacity="0.55"/><rect width="1600" height="1000" fill="url(#vig)"/></svg>

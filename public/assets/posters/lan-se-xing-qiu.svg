@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000">
+<defs>
+  <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#03111d"/>
+    <stop offset="0.55" stop-color="#063047"/>
+    <stop offset="1" stop-color="#03111d"/>
+  </linearGradient>
+  <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+    <stop offset="0" stop-color="#4cc9f0" stop-opacity="0.95"/>
+    <stop offset="0.4" stop-color="#4cc9f0" stop-opacity="0.35"/>
+    <stop offset="1" stop-color="#4cc9f0" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="vig" cx="48%" cy="42%" r="78%">
+    <stop offset="0.45" stop-color="#000" stop-opacity="0"/>
+    <stop offset="1" stop-color="#000" stop-opacity="0.72"/>
+  </radialGradient>
+  <filter id="grain">
+    <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/>
+    <feColorMatrix type="saturate" values="0"/>
+    <feComponentTransfer><feFuncA type="linear" slope="0.10"/></feComponentTransfer>
+  </filter>
+  <filter id="soft"><feGaussianBlur stdDeviation="46"/></filter>
+  <filter id="soft2"><feGaussianBlur stdDeviation="16"/></filter>
+</defs>
+<rect width="1600" height="1000" fill="url(#sky)"/>
+<circle cx="800" cy="-120" r="640" fill="#4cc9f0" opacity="0.12" filter="url(#soft)"/><path d="M 320 0 L 450 0 L 700 780 L 500 780 Z" fill="#a7f3d0" opacity="0.045"/><path d="M 520 0 L 650 0 L 900 780 L 700 780 Z" fill="#a7f3d0" opacity="0.045"/><path d="M 720 0 L 850 0 L 1100 780 L 900 780 Z" fill="#a7f3d0" opacity="0.045"/><path d="M 920 0 L 1050 0 L 1300 780 L 1100 780 Z" fill="#a7f3d0" opacity="0.045"/><path d="M 1120 0 L 1250 0 L 1500 780 L 1300 780 Z" fill="#a7f3d0" opacity="0.045"/><path d="M 1320 0 L 1450 0 L 1700 780 L 1500 780 Z" fill="#a7f3d0" opacity="0.045"/><path d="M 0 700 Q 300 650 600 700 T 1200 700 T 1600 690 L 1600 1000 L 0 1000 Z" fill="#021019" opacity="0.95"/><path d="M 0 810 Q 400 740 800 810 T 1600 800 L 1600 1000 L 0 1000 Z" fill="#010a11" opacity="0.98"/><circle cx="1199" cy="582" r="16" fill="#a7f3d0" opacity="0.12"/><circle cx="398" cy="649" r="24" fill="#a7f3d0" opacity="0.08"/><circle cx="916" cy="582" r="22" fill="#a7f3d0" opacity="0.12"/><circle cx="1146" cy="417" r="26" fill="#a7f3d0" opacity="0.18"/><circle cx="912" cy="410" r="16" fill="#a7f3d0" opacity="0.16"/><path d="M 380 700 Q 640 560 980 660 Q 1200 720 1320 690" stroke="#a7f3d0" stroke-width="5" fill="none" opacity="0.18"/><path d="M -200 900 L 1100 -100 L 1420 -100 L 120 1000 Z" fill="#ffffff" opacity="0.025"/><rect width="1600" height="1000" filter="url(#grain)" opacity="0.55"/><rect width="1600" height="1000" fill="url(#vig)"/></svg>
